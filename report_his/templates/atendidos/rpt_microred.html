@@ -1,0 +1,72 @@
+{% extends "index.html" %} 
+{% load static %}
+{% load widget_tweaks %} 
+{% block content %}
+
+<div class="row">
+  {% include "atendidos/partials/sidebar.html" %}
+
+  <div class="col-md-9">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Descripcion del reportes por MICROREDES</h3>
+      </div>
+
+      <div class="card-body">
+        {% comment %} Inicia Formulario {% endcomment %}
+        <form method="get" action="{% url 'rpt_atendidos' %}">
+          
+          <div class="row">
+            <div class="col-4">
+              <label for="anio_selected">Año:</label>
+              <select class="custom-select mb-4" name="anio_selected" 
+                <option select>Selecciona un año</option>
+                  {% for a in anio %}
+                    <option value="{{a.id}}">{{ a.nombre_anio }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+            <div class="col-4">
+              <label for="anio_selected">Mes Inicio:</label>
+              <select class="custom-select mb-4" name="anio_selected" 
+                <option select>Selecciona el mes de inicio</option>
+                  {% for a in mes %}
+                    <option value="{{a.id}}">{{ a.nombre_mes }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+            <div class="col-4">
+              <label for="anio_selected">Mes Fin:</label>
+              <select class="custom-select mb-4" name="anio_selected" 
+                <option select>Selecciona el mes final</option>
+                {% for a in mes %}
+                  <option value="{{a.id}}">{{ a.nombre_mes }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <select class="custom-select mb-4" 
+                name="diresa_selected" 
+                hx-get="{% url 'atendidos_redes' %}" 
+                hx-trigger="change"
+                hx-target="#redes">
+          <option select>Seleccione la DIRESA</option>
+          {% for diresa in diresas %}
+            <option value="{{diresa.cod_disa}}">{{ diresa.desc_disa }}</option>
+          {% endfor %}
+          </select>
+
+          <div id="redes">{% include 'atendidos/partials/redes.html' %}</div>
+
+          <div id="microredes">{% include 'atendidos/partials/microredes.html' %}</div>
+         
+          <button type="submit" class="btn btn-success">Procesar</button>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

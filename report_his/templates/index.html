@@ -1,0 +1,43 @@
+{% extends 'layout/body.html' %}
+{% block content %}
+<main class="container">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-5">
+          <h2 class="font-weight-light">Reporteador Regional HIS </h2>
+          <p class="text-justify">
+            ¡Bienvenido! Estamos aquí para ayudarlo a obtener información y respuestas a sus preguntas sobre los reportes estadísticos de salud de la región Junín.
+          </p>
+          <a class="btn btn-primary" href="http://www.saludjunin.site" target="_blank"><i class="fas fa-search"></i> Tableros </a>
+        </div>
+      </div>
+      <!-- Content Row-->
+      <div class="row">
+        <!-- Pepeleta Horas -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body bg-light">
+              <h5 class="card-title">INFORMACION DE ACTUALIZACION</h5>
+              <p class="card-text">
+                <li>BD HIS-MINSA (archivo plano) : 24/03/2023 8:00 am</li>  
+                <li>BD Paciente HIS MINSA: 24/03/2023 8:00 am</li>  
+                <li>BD Personal HIS MINSA: 24/03/2023 8:00 am</li>  
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Papeleta Dias -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body bg-light">
+              <h5 class="card-title">REPORTES FRECUENTES</h5>
+              <p class="card-text">Listado de reportes frecuentes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+{% endblock %}

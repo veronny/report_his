@@ -1,0 +1,43 @@
+<div class="col-md-3">
+  {% comment %} BARRA LATERAL {% endcomment %}
+  <div class="card card-secondary">
+    <div class="card-header">
+      <h3 class="card-title">Tipo de Reportes</h3>
+    </div>
+    {% comment %} Enviar a tipo de formulario {% endcomment %}
+    <div class="card-body">
+      <div class="form-group">
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item active">
+            <a href="{% url 'atendidos_submenu_diresa' %}" class="nav-link">
+              <i class="fas fa-inbox"></i> Diresa
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'atendidos_submenu_red' %}" class="nav-link"> <i class="fas fa-cubes"></i> Red </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'atendidos_submenu_microred' %}" class="nav-link">
+              <i class="fas fa-city"></i> Micro Red
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'atendidos_submenu_establecimiento' %}" class="nav-link">
+              <i class="fas fa-hospital"></i> Establecimiento
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'atendidos_submenu_provincia' %}" class="nav-link">
+              <i class="fas fa-map-marked-alt"></i> Provincia
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'atendidos_submenu_distrito' %}" class="nav-link">
+              <i class="fas fa-map-marker"></i> Distrito
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

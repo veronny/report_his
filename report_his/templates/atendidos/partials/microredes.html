@@ -1,0 +1,17 @@
+<select class="custom-select mb-4"
+    name="microredes_selected"
+    hx-get="{% url 'atendidos_establecimientos' %}"
+    hx-trigger="change"
+    hx-target="#establecimientos">
+    <option select>Seleccione la MICRORED</option>
+      
+    {% for microred in microredes %}
+        <option value="{{ microred.cod_mic }}">{{ microred.nombre_microred }}</option>
+    {% endfor %}
+</select>
+
+{% if request.htmx %}
+<div id="establecimientos" class="my-4" hx-swap-oob="true">
+    {% include 'atendidos/partials/establecimientos.html' %}
+</div>
+{% endif %}

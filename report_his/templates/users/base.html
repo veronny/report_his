@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-primary">           
+            <div class="card-header text-center">
+                <div class="image text-center">
+                    <img class="img-circle elevation-2" src="{% static 'img/diresajunin_90_2.png' %}" alt="User Image"/>
+                </div>
+                <a href="#" class="h1"><b>Report</b><span style="color:#ff7e02";>HIS</span></a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg" style="color:#06b939";>Reporteador Regional JUNIN</p>
+
+                {% block container %}
+                    
+                {% endblock %}
+               <!-- /.social-auth-links -->
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.login-box -->
+
+</body>
+
+{% endblock %}

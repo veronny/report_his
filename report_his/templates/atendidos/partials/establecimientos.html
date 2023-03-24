@@ -1,0 +1,6 @@
+<select class="custom-select mb-4">
+    <option select>Seleccione el ESTABLECIMIENTO DE SALUD</option>
+    {% for establecimiento in establecimientos %}
+        <option value="{{ establecimiento.codigo_unico }}">{{ establecimiento.nombre_establecimiento }}</option>
+    {% endfor %}
+</select>
